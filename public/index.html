@@ -1,0 +1,18 @@
+<!DOCTYPE html><!-- this doctype means HTML5-->
+
+<!--it is essential that this file- the entry point- is called index.html because that is what the entrypoint is called in the package json -->
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <!--script tags are the alternative to installing this stuff with npm and webpack-->
+</head>
+  <body> <!--everything in the body gets rendered to the screen-->
+    <div id='app'></div><!--this will be the conatiner div for the application. all react apps require some component in the website that they can attachn to-->
+<!-- script tag tells babel to convert this -->
+<!--when we injected the jsx script directly, it had to be compiled to js on the browser. webpack transforms them before the page loads -->
+    <script src="bundle.js"></script><!-- html5 assumes script type is js-->
+    <!-- webpack will create bundle.js-->
+  </body>
+</html>
+
+<!--anything in the public folder is rendered to the brwser. we can keep the component files to the app folder because these are bundled into the bundle file*/
