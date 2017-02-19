@@ -4,7 +4,7 @@ import React from 'react';
 var WeatherMessage = ({city, temp})=>{
     let message=(city=='' || temp=='' ? "": "It's "+temp+" degrees in "+city);
     return (
-      <div>{message}</div>
+      <div className="text-center">{message}</div>
     );
   };
 

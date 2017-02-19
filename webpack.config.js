@@ -40,7 +40,8 @@ module.exports = {
       WeatherMessage: "app/components/WeatherMessage.jsx",
       About: "app/components/About.jsx",
       Examples: "app/components/Examples.jsx",
-      OpenWeatherMap: "app/api/openWeatherMap.js"
+      OpenWeatherMap: "app/api/openWeatherMap.js",
+      kitten: "public/images/kitten.jpg"
     } //...sothe alias... needs to omit the first forward slash. not sure wh
   },
 
@@ -53,7 +54,14 @@ module.exports = {
       },
       test: /\.jsx?$/,
       exclude: /(node_modules|bower_components)/
+    },
+    {
+      loader: 'file-loader',
+      test: /(.jpg|.png)/,
+      options: {
+        name: '.public/images/[hash].[ext]'
       }
+    }
     ]
   },
   devtool: 'cheap-module-eval-source-map'

@@ -7,9 +7,19 @@ weare just a dumb function */
 
 var About = (props)=>(
   <div>
-    <h3>About</h3>
-    <p>About page</p>
-  </div>
+    <h3 className="text-center">About</h3>
+          <h4>About the site</h4>
+          <p>
+              This was created strictly to learn to use react.
+            </p>
+            <div>
+            <h4>Links</h4>
+              <ul>
+                <li><a href="https://github.com/facebook/react">React</a></li>
+                <li><a href="http://openweathermap.org/api">Open Weather Map</a></li>
+            </ul>
+          </div>
+        </div>
 );
 
 module.exports=About;
