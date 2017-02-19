@@ -16,9 +16,11 @@ module.exports.getTemp=function getTemp(location){
 //for example, we need to handle the api call that returns a promise and what we can do is (if it's a success) then have the success callback//
 //(or resolve) callback return the parsed out temperature (makes sense since this class' responsibility is managing the open maps api)
 //and we can run an aditional check on the result callback to see if it's REALLY a true result
+
   return axios.get(url). //use axios module to actually make the request. axios returns a promise. we want to return the result of the promise. also, resolving a promise returns a promise (so promises can be chained)
     then(
       function(result){
+        debugger;
         if(result.ord!=200){
           return result.data.main.temp;
         } else throw new Error(err.message);
