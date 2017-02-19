@@ -20,7 +20,7 @@ module.exports.getTemp=function getTemp(location){
   return axios.get(url). //use axios module to actually make the request. axios returns a promise. we want to return the result of the promise. also, resolving a promise returns a promise (so promises can be chained)
     then(
       function(result){
-        debugger;
+        //debugger;
         if(result.ord!=200){
           return result.data.main.temp;
         } else throw new Error(err.message);

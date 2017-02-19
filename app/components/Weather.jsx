@@ -17,7 +17,7 @@ var Weather = React.createClass({
 
   handleNewCity: function(city){
 
-    debugger; //analogous to setting a breakpoint. allows us to inspect the current values of state and other global variables in the developmen tool
+  //  debugger; //analogous to setting a breakpoint. allows us to inspect the current values of state and other global variables in the developmen tool
     this.setState({isLoading: true});
    //note: the referent of this always refers to whichever object executes th function
    //the success callback for a promise would be executed by the promise object, not this object

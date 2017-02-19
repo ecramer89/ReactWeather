@@ -6,19 +6,14 @@ var {Link, IndexLink} = require('react-router'); //require('react-router') resol
 //the Link component from react rouer enables us to create links to other pages in our app that we defined using react-router route component
 
 /* notice the use of an object in jsx inction syntax-- its just double {{}}. also notice that we pass in styles via ajobject*/
-var Navigation = React.createClass({
-  render: function(){
-    return (
-      <div>
-        <h2>Navigiation</h2>
-          <IndexLink to ='/' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
-          <Link to='/about' activeClass="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
-          <Link to='/examples' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
-      </div>
-    )
-  }
-});
-
+var Navigation = (props)=>(
+  <div>
+    <h2>Navigation</h2>
+      <IndexLink to ='/' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
+      <Link to='/about' activeClass="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
+      <Link to='/examples' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
+  </div>
+);
 //link versus a href: link allows you to add some custom styles and classes that change the appearance of the links depending on which page the user is on
 //via the special activeclass and activestyle PROPS that are not otherwise aailable as html tag attributes.
 /*
