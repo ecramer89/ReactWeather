@@ -17,7 +17,7 @@ app.use(function(req, res, next){//maybe check what would happen if your app int
 
 //well, basically, thepage just hangs (says you have too many rediredcts)
   if(req.headers['x-forwarded-proto'] === 'https'){ //if the request is http
-      redirect to the http version of the url
+      //redirect to the http version of the url
       res.redirect('http://'+req.hostname+req.url);
   }else {
     //otherwise, process request normall
