@@ -7,6 +7,15 @@ var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
+
+
+//in react, we divide responsibiities functionally... not by syntax
+//so we require all the css we need for thi component direclty in here
+//inseadof usign sep stylesheets.
+//prefix with the two loaders firtst
+require('style!css!foundation-sites/dist/foundation.min.css');
+$(document).foundation();
+
 //router has one prop, history
 
 ReactDOM.render(
