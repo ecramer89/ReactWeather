@@ -18,7 +18,7 @@ app.use(function(req, res, next){//maybe check what would happen if your app int
     next(); //process the request normally
   }else {
     //else, redirect to the http version of the url
-    res.redirect('https://'+req.hostname+req.url);
+    res.redirect('http://'+req.hostname+req.url);
 
   }
 });
