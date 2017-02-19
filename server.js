@@ -14,11 +14,15 @@ const PORT = process.env.PORT || 3000; //need to use the node js variable rocess
 //we can intercept requests by attachung express middleware
 //the middleware functions are invoked in order
 app.use(function(req, res, next){//maybe check what would happen if your app intercepted an https request- the weather app should crash but the error messsage would be useful to see
-  if(req.headers['x-forwarded-proto'] === 'http'){ //if the request is http
-    next(); //process the request normally
+
+//well, basically, thepage just hangs (says you have too many rediredcts)
+  if(req.headers['x-forwarded-proto'] === 'https'){ //if the request is http
+      redirect to the http version of the url
+      res.redirect('http://'+req.hostname+req.url);
   }else {
-    //else, redirect to the http version of the url
-    res.redirect('http://'+req.hostname+req.url);
+    //otherwise, process request normall
+    next(); //note that local host doesnt have x-forwarded-proto (protocol) at all,
+    //so it would never process the request normally.
 
   }
 });
