@@ -8,18 +8,37 @@ var {Link, IndexLink} = require('react-router'); //require('react-router') resol
 /* notice the use of an object in jsx inction syntax-- its just double {{}}. also notice that we pass in styles via ajobject*/
 
 /*since class is a reserved jsx keyword, need to call the css classes className. the webpack compiler will convert it to class for rendering to the browser*/
-var Navigation = (props)=>(
-  <div className="top-bar">
-    <div className="top-bar-left">
-      <ul className="menu">
-        <li className="menu-text">React Weather App</li>
-        <li><IndexLink to ='/' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink></li>
-        <li><Link to='/about' activeClass="active" activeStyle={{fontWeight: 'bold'}}>About</Link></li>
-        <li><Link to='/examples' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link></li>
-      </ul>
-    </div>
-  </div>
-);
+var Navigation = React.createClass({
+
+  handleSearch: function(event){
+    event.preventDefault();
+    alert("not wired up yet!");
+  },
+
+  render: function(){
+      return (
+        <div className="top-bar">
+        <div className="top-bar-left">
+          <ul className="menu">
+            <li className="menu-text">React Weather App</li>
+            <li><IndexLink to ='/' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink></li>
+            <li><Link to='/about' activeClass="active" activeStyle={{fontWeight: 'bold'}}>About</Link></li>
+            <li><Link to='/examples' activeClass="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link></li>
+          </ul>
+        </div>
+        <div className="top-bar-right">
+          <form onSubmit={this.handleSearch}>
+            <ul className="menu">
+                {/*be sure to specify 'placeholder' not 'value' or else it will prevent you from entering data into the search bar */}
+              <li><input type="search" placeholder="Enter your city"/></li>
+              <li><input type="submit" className="button" value="Get Weather"/></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    );
+  }
+});
 //link versus a href: link allows you to add some custom styles and classes that change the appearance of the links depending on which page the user is on
 //via the special activeclass and activestyle PROPS that are not otherwise aailable as html tag attributes.
 /*
