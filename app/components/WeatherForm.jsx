@@ -21,9 +21,9 @@ var WeatherForm = React.createClass({
   //prefer to define as custom classes... makes it easier to have local variables/constands
   render: function(){
     return (
-      <div className="top-bar-right">
+      <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="search" ref="city" defaultValue={this.PLACE_HOLDER}/>
+          <input type="text" ref="city" placeholder={this.PLACE_HOLDER}/>
           <input type="submit" className="button" value="Check Weather"/>
        </form>
       </div>

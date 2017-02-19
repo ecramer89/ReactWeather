@@ -5,8 +5,11 @@ import Navigation from 'Navigation';
 var Main = (props)=>(
     <div>
       <Navigation/>
-      <h2>Main</h2>
-      {props.children}
+      <div className="row">
+        <div className="columns medium-6 large-4 small-centered">
+          {props.children}
+        </div>
+      </div>
     </div>
 );
 //the call to render all the children of this component in tihis examples//thank
