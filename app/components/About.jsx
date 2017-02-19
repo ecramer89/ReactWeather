@@ -5,6 +5,11 @@ basically, they are demoted from being aclass (which can maintain state and defi
 a method. the props are an obligatory parameter here; it wont run otherwise. we no longer use this keyword to access propsbecause we are no longer a class.
 weare just a dumb function */
 
-var About = (props)=>(<h3>About</h3>);
+var About = (props)=>(
+  <div>
+    <h3>About</h3>
+    <p>About page</p>
+  </div>
+);
 
 module.exports=About;
