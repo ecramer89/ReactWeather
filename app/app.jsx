@@ -16,6 +16,14 @@ var Examples = require('Examples');
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
+
+//the files that we load here- such as stylesheets and other assets-- are available to the entire application
+//possibly because this is the top level component or also possibly because we defined this file as the entry (or one of them
+//in our webpack config)
+
+//when using webpack,we need to load in our assets using the require statemnt
+require('style!css!applicationStyles'); //style! and css! are both specialized webpack loaders that we installed to handle these file types
+
 //router has one prop, history
 
 ReactDOM.render(

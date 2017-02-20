@@ -7,7 +7,7 @@ weare just a dumb function */
 
 var About = (props)=>(
   <div>
-    <h3 className="text-center">About</h3>
+    <h3 className="text-center page-title">About</h3>
           <h4>About the site</h4>
             <p>
               This was created strictly to learn to use react.

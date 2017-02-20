@@ -30,7 +30,7 @@ var Navigation = React.createClass({
           <form onSubmit={this.handleSearch}>
             <ul className="menu">
                 {/*be sure to specify 'placeholder' not 'value' or else it will prevent you from entering data into the search bar */}
-              <li><input type="search" placeholder="Enter your city"/></li>
+              <li><input type="search" placeholder="Lookup the weather in a city"/></li>
               <li><input type="submit" className="button" value="Get Weather"/></li>
             </ul>
           </form>

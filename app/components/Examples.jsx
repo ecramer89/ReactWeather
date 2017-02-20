@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 2. can easily disambiguate index routes rom regular routes and revent cascading styles by using the index route and index link tag tag*/
 var Examples = (props)=>(
   <div>
-    <h4 class="text-center">Some example cities to try:</h4>
+    <h4 class="text-center page-title">Some example cities to try:</h4>
     <ol>
       <li>
         {/*you can always append specific QUERY PARAMETERS to a url in a route that would make use ofthem!*/}

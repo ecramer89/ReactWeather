@@ -41,10 +41,11 @@ module.exports = {
       About: "app/components/About.jsx",
       Examples: "app/components/Examples.jsx",
       OpenWeatherMap: "app/api/openWeatherMap.js",
-      ErrorModal: "app/components/ErrorModal.jsx"
+      ErrorModal: "app/components/ErrorModal.jsx",
+      applicationStyles: "app/styles/app.css"
     } //...sothe alias... needs to omit the first forward slash. not sure wh
   },
-
+/*you can't push to heroku if webpack is runnng.*/
   module: {
     loaders: [
       {

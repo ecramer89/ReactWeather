@@ -7,7 +7,7 @@ import React from 'react';
 //anything that must define an additional function in this fashion- has to be a proper class.
 var WeatherForm = React.createClass({
   //need to place variable defs within functions... would have to define the class different i think otherwise
-  PLACE_HOLDER: "Enter your city", //of course you can define other variables within aclass... justas propeties
+  PLACE_HOLDER: "Lookup the weather in a city.", //of course you can define other variables within aclass... justas propeties
 
   handleSubmit: function(event){
     event.preventDefault();
@@ -19,12 +19,12 @@ var WeatherForm = React.createClass({
       this.props.onNewCity(city);
     }
   },
-  //prefer to define as custom classes... makes it easier to have local variables/constands
+
   render: function(){
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" ref="city" placeholder={this.PLACE_HOLDER}/>
+          <input type="search" ref="city" placeholder={this.PLACE_HOLDER}/>
           <input id="test" type="submit" className="button expanded hollow" value="Check Weather"/>
        </form>
       </div>
