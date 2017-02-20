@@ -9,12 +9,12 @@ var About = (props)=>(
   <div>
     <h3 className="text-center">About</h3>
           <h4>About the site</h4>
-          <p>
+            <p>
               This was created strictly to learn to use react.
             </p>
             <div>
             <h4>Links</h4>
-              <ul>
+              <ul className="dropdown menu" data-dropdown-menu="">
                 <li><a href="https://github.com/facebook/react">React</a></li>
                 <li><a href="http://openweathermap.org/api">Open Weather Map</a></li>
             </ul>

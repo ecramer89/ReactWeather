@@ -40,7 +40,8 @@ module.exports = {
       WeatherMessage: "app/components/WeatherMessage.jsx",
       About: "app/components/About.jsx",
       Examples: "app/components/Examples.jsx",
-      OpenWeatherMap: "app/api/openWeatherMap.js"
+      OpenWeatherMap: "app/api/openWeatherMap.js",
+      ErrorModal: "app/components/ErrorModal.jsx"
     } //...sothe alias... needs to omit the first forward slash. not sure wh
   },
 

@@ -21,9 +21,9 @@ module.exports.getTemp=function getTemp(location){
     then(
       function(result){
         //debugger;
-        if(result.ord!=200){
-          return result.data.main.temp;
-        } else throw new Error(err.message);
+        if(result.data.cod && result.data.message){
+          throw new Error(err.message);
+        } else return result.data.main.temp;
       },
       function(err){
         throw new Error(err.message);

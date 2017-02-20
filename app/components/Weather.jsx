@@ -2,7 +2,7 @@ import React from 'react';
 var WeatherForm = require('WeatherForm');
 import WeatherMessage from 'WeatherMessage';
 import OpenWeatherMap from 'OpenWeatherMap';
-
+import ErrorModal from 'ErrorModal';
 
 var Weather = React.createClass({
   getInitialState: function(){
@@ -10,6 +10,7 @@ var Weather = React.createClass({
     //however, matt said it actually slows down the application is we don't so.. i will, but initialize tem withudnefined
     return {
       isLoading: false,
+      errorMessage: undefined,
       temp: undefined,
       city: undefined
     }
@@ -23,17 +24,14 @@ var Weather = React.createClass({
    //the success callback for a promise would be executed by the promise object, not this object
    //(no atomatic this binding in js)
    //thus we use bind to create a new instance of handlenewtemp wherein this referent is bound to this componen
-
+      debugger;
       OpenWeatherMap.getTemp(city).
       then(
         //note: you can also bind additional argument values to a functio with bind.
         //these arguments will be the first ONES in the function's list.
         //any other values that the caller passes in will come AFTERWARDS
         this.handleNewTemp.bind(this, city),
-        function(err){
-            alert(err.message);
-            this.setState({isLoading: false});
-        });
+        this.handleError);
       //why must NEVER CALL FROM RENDER, without being contingent on an inout event or something
   },
 
@@ -41,8 +39,21 @@ var Weather = React.createClass({
       this.setState({city, temp, isLoading: false}); //will trigger an automatic call to render.
     },
 
+  handleError: function(err){
+    this.setState(
+      { isLoading: false,
+        errorMessage: err.message
+      });
+  },
   render: function(){
-    let {city, temp, isLoading} = this.state;
+    let {city, temp, isLoading, errorMessage} = this.state;
+
+    function renderError(){
+      if(errorMessage){
+        return <ErrorModal/>;
+      }
+    }
+
 
     //we can define a closure (function within a function) to encapsulate a piece of logic
     //that is local to the function (avoid cluttering up the code with one off helper methods, but give them
@@ -62,6 +73,7 @@ var Weather = React.createClass({
         <h2 className="text-center">Get Weather</h2>
         <WeatherForm onNewCity={this.handleNewCity}/>
         {renderMessage()}
+        {renderError()}
       </div>
       );
   }
