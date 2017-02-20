@@ -11,6 +11,7 @@ var WeatherForm = React.createClass({
 
   handleSubmit: function(event){
     event.preventDefault();
+    //$('#test').hide(); just testing out jQuery!!! but yes this works
     let city=this.refs.city.value;
      //have to use this to access
     if(typeof city === 'string' && city.length > 0 && city!== this.PLACE_HOLDER){
@@ -24,7 +25,7 @@ var WeatherForm = React.createClass({
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" ref="city" placeholder={this.PLACE_HOLDER}/>
-          <input type="submit" className="button expanded hollow" value="Check Weather"/>
+          <input id="test" type="submit" className="button expanded hollow" value="Check Weather"/>
        </form>
       </div>
     );

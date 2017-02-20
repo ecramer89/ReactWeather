@@ -24,7 +24,7 @@ var Weather = React.createClass({
    //the success callback for a promise would be executed by the promise object, not this object
    //(no atomatic this binding in js)
    //thus we use bind to create a new instance of handlenewtemp wherein this referent is bound to this componen
-      debugger;
+      
       OpenWeatherMap.getTemp(city).
       then(
         //note: you can also bind additional argument values to a functio with bind.
