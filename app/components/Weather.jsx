@@ -45,12 +45,13 @@ var Weather = React.createClass({
         errorMessage: err.message
       });
   },
+
   render: function(){
     let {city, temp, isLoading, errorMessage} = this.state;
 
     function renderError(){
       if(errorMessage){
-        return <ErrorModal/>;
+        return <ErrorModal title="No data found for that city." message={errorMessage}/>;
       }
     }
 

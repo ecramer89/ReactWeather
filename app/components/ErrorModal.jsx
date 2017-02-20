@@ -26,12 +26,20 @@ componentDidMount: function(){
 
 },
 
+getDefaultProps: function(){
+  return {
+    title: "Error!",
+    message: "Something bad happened."
+  }
+},
+/*the two attributes data-reveal and data-close, which dont' have a value by default, must be given an empty string value to work. note they dont have these in the foundation docs so be careful*/
 /* by default modals are hidden. thus, invoking the render method of a modal should not result in it appearing to the screen!!!*/
   render: function(){
     return (
-      <div id="errorModal" className="reveal text-center" data-reveal="">
-        <h1>Error!</h1>
-        <p>Something isn't right...</p>
+
+      <div id="errorModal" className="reveal tiny text-center" data-reveal="">
+        <h4>{this.props.title}</h4>
+        <p>{this.props.message}</p>
         <p><button className="button hollow" data-close="">Okay</button></p>
       </div>
     );
